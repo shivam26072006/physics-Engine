@@ -11,13 +11,14 @@ createCanvas(600,600);
 myEngine = Engine.create();
 myWorld = myEngine.world;
 
-var rest = {
-  isStatic : true 
-}
+ground = new Ground(300,590,600,20);
+box = new Box(300,400,50,50);
+box2 = new Box(320,350,50,100);
 
-box = Bodies.rectangle(300,300,50,150,rest);
-World.add(myWorld,box);
 
+
+
+ 
 }
 
 function draw() {
@@ -25,8 +26,9 @@ function draw() {
 background(0);
 Engine.update(myEngine);
 
-var pos=box.position;
-rect(pos.x,pos.y,50,150);
-console.log(box.position.y);
+ground.display();
+box.display();
+box2.display();
+ 
 
 }
